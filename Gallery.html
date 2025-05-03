@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .portfolio-section {
+            padding: 80px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .portfolio-title {
+            font-size: 2.4rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .portfolio-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background-color: #76b82a;
+            margin: 15px auto 0;
+        }
+        
+        .portfolio-subtitle {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #666;
+        }
+        
+        .portfolio-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .category-tab {
+            background-color: #f0f0f0;
+            color: #333;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .category-tab.active {
+            background-color: #76b82a;
+            color: white;
+            box-shadow: 0 4px 8px rgba(118, 184, 42, 0.3);
+        }
+        
+        .category-tab:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-2px);
+        }
+        
+        .category-tab.active:hover {
+            background-color: #689e25;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            height: 280px;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+        
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 20px;
+            transform: translateY(70%);
+            transition: transform 0.4s ease;
+            text-align: left;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+        }
+        
+        .project-name {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease 0.1s;
+        }
+        
+        .project-category {
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease 0.2s;
+            color: #76b82a;
+            font-weight: 500;
+        }
+        
+        .project-card:hover .project-name,
+        .project-card:hover .project-category {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .view-project-btn {
+            background-color: #76b82a;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease 0.3s;
+        }
+        
+        .project-card:hover .view-project-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .view-project-btn:hover {
+            background-color: white;
+            color: #76b82a;
+        }
+        
+        /* Animation for newly loaded items */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .project-card.fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        @media (max-width: 992px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-categories {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .category-tab {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="portfolio-section">
+        <h2 class="portfolio-title">Project Gallery</h2>
+        <p class="portfolio-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
+        
+        <div class="portfolio-categories">
+            <button class="category-tab active" data-filter="all">ALL</button>
+            <button class="category-tab" data-filter="lawn-care">LAWN CARE</button>
+            <button class="category-tab" data-filter="garden-care">GARDEN CARE</button>
+            <button class="category-tab" data-filter="planting">PLANTING</button>
+        </div>
+        
+        <div class="projects-grid">
+            <div class="project-card" data-category="garden-care">
+                <img src="/images/box (54).jpg" alt="Garden Design Project">
+                <div class="project-overlay">
+                    <h3 class="project-name">Formal Garden Design</h3>
+                    <p class="project-category">Garden Care</p>
+                    <button class="view-project-btn">View Project</button>
+                </div>
+            </div>
+            
+            <div class="project-card" data-category="lawn-care">
+                <img src="/images/box (64).jpg" alt="Estate Landscaping">
+                <div class="project-overlay">
+                    <h3 class="project-name">Estate Landscaping</h3>
+                    <p class="project-category">Lawn Care</p>
+                    <button class="view-project-btn">View Project</button>
+                </div>
+            </div>
+            
+            <div class="project-card" data-category="planting">
+                <img src="/images/box (68).jpg" alt="Window Box Garden">
+                <div class="project-overlay">
+                    <h3 class="project-name">Window Box Garden</h3>
+                    <p class="project-category">Planting</p>
+                    <button class="view-project-btn">View Project</button>
+                </div>
+            </div>
+            
+            <div class="project-card" data-category="lawn-care">
+                <img src="/images/box (65).jpg" alt="Country Estate">
+                <div class="project-overlay">
+                    <h3 class="project-name">Country Estate</h3>
+                    <p class="project-category">Lawn Care</p>
+                    <button class="view-project-btn">View Project</button>
+                </div>
+            </div>
+            
+            <div class="project-card" data-category="planting">
+                <img src="/images/box (67).jpg" alt="Wedding Flowers">
+                <div class="project-overlay">
+                    <h3 class="project-name">Wedding Flowers</h3>
+                    <p class="project-category">Planting</p>
+                    <button class="view-project-btn">View Project</button>
+                </div>
+            </div>
+            
+            <div class="project-card" data-category="garden-care">
+                <img src="/images/box (65).jpg" alt="Garden Seating Area">
+                <div class="project-overlay">
+                    <h3 class="project-name">Garden Seating Area</h3>
+                    <p class="project-category">Garden Care</p>
+                    <button class="view-project-btn">View Project</button>
+                </div>
+            </div>
+        </div>
+      </section>
+      
+</body>
+</html>

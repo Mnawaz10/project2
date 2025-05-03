@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Section</title>
+    <style>
+        
+    /* ----------------------Services Section Styles--------------------- */
+    .services-section {
+            background-color: #76b82a;
+            color: white;
+            padding: 50px 20px 70px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .services-heading {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .services-subtitle {
+            max-width: 700px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+        
+        .services-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+        
+        .service-item {
+            flex: 1;
+            min-width: 220px;
+            max-width: 280px;
+        }
+        
+        .service-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .service-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 992px) {
+            .services-container {
+                gap: 40px;
+            }
+            
+            .service-item {
+                flex: 0 0 calc(50% - 20px);
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .service-item {
+                flex: 0 0 100%;
+            }
+        } 
+    /* -------------------------------homeitro------------------------ */
+    
+    .home-intro {
+            padding: 80px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .intro-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        
+        .intro-content {
+            flex: 0 0 45%;
+            padding-right: 20px;
+        }
+        
+        .featured-services {
+            flex: 0 0 50%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .intro-title {
+            font-size: 2.4rem;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .highlight-text {
+            color: #76b82a;
+        }
+        
+        .intro-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background-color: #76b82a;
+            margin-top: 15px;
+        }
+        
+        .intro-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .view-all-button {
+            display: inline-block;
+            background-color: #76b82a;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 3px;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .view-all-button:hover {
+            background-color: #669e22;
+        }
+        
+        .service-box {
+            flex: 0 0 48%;
+            margin-bottom: 30px;
+        }
+        
+        .service-thumbnail {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .service-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .service-name {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .service-summary {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #666;
+        }
+        
+        @media (max-width: 992px) {
+            .intro-content, .featured-services {
+                flex: 0 0 100%;
+            }
+            
+            .intro-content {
+                margin-bottom: 50px;
+                padding-right: 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .service-box {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+  <!--------------------services-------------------->
+ 
+  <section class="services-section">
+    <h2 class="services-heading">Our Services</h2>
+    <p class="services-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
+    
+    <div class="services-container">
+        <div class="service-item">
+            <div class="service-image">
+                <img src="/images/box (68).jpg" alt="Lawn Care">
+            </div>
+            <h3 class="service-title">Lawn Care</h3>
+            <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.</p>
+        </div>
+        
+        <div class="service-item">
+            <div class="service-image">
+                <img src="/images/box (68).jpg" alt="Landscape Design">
+            </div>
+            <h3 class="service-title">Landscape Design</h3>
+            <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.</p>
+        </div>
+        
+        <div class="service-item">
+            <div class="service-image">
+                <img src="/images/box (56).jpg" alt="Tree Care">
+            </div>
+            <h3 class="service-title">Tree Care</h3>
+            <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.</p>
+        </div>
+        
+        <div class="service-item">
+            <div class="service-image">
+                <img src="/images/box (58).jpg" alt="Spring & Fall Cleanup">
+            </div>
+            <h3 class="service-title">Spring & Fall Cleanup</h3>
+            <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.</p>
+        </div>
+    </div>
+</section>
+
+<!--------------------------------another ------------>
+
+       
+  
+
+<section class="home-intro">
+  <div class="intro-wrapper">
+      <div class="intro-content">
+          <h1 class="intro-title">Welcome to <span class="highlight-text">Landscaper</span></h1>
+          
+          <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
+          
+          <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
+          
+          <button class="view-all-button">VIEW ALL SERVICES</button>
+      </div>
+      
+      <div class="featured-services">
+          <div class="service-box">
+              <div class="service-thumbnail">
+                  <img src="/images/box (59).jpg" alt="Garden Care">
+              </div>
+              <h3 class="service-name">Garden Care</h3>
+              <p class="service-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis.</p>
+          </div>
+          
+          <div class="service-box">
+              <div class="service-thumbnail">
+                  <img src="/images/box (56).jpg" alt="Lawn Care">
+              </div>
+              <h3 class="service-name">Lawn Care</h3>
+              <p class="service-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante.</p>
+          </div>
+      </div>
+  </div>
+</section>
+</body>
+</html>

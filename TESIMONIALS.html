@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        // Auto-cycle through testimonials
+        setInterval(function() {
+            slideIndex++;
+            if (slideIndex > document.querySelectorAll('.testimonial-slide').length) {
+                slideIndex = 1;
+            }
+            showSlides(slideIndex);
+        }, 5000);
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.querySelectorAll(".testimonial-slide");
+            let dots = document.querySelectorAll(".dot");
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            
+            slides[slideIndex-1].classList.add("active");
+            dots[slideIndex-1].classList.add("active");
+        }
+ 
+    </script>
+    <style>
+        .testimonials-section {
+            background: linear-gradient(rgba(50, 150, 0, 0.7), rgba(50, 150, 0, 0.7)), url('/api/placeholder/1200/800') center/cover no-repeat;
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: white;
+            margin: 10px auto 30px;
+        }
+
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            display: none;
+            animation: fadeEffect 1s;
+            padding: 0 20px;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 15px;
+        }
+
+        .dots-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: white;
+        }
+
+        .dot:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes fadeEffect {
+            from {opacity: 0.7;}
+            to {opacity: 1;}
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            .testimonial-text {
+                font-size: 1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="testimonials-section">
+        <h2 class="section-title">Testimonials</h2>
+        
+        <div class="testimonial-container">
+            <div class="testimonial-slide active">
+                <p class="testimonial-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at duis sed dapibus leo nec ornare diam."</p>
+                <p class="testimonial-author">- John DOE, Parker County, TX</p>
+            </div>
+            
+            <div class="testimonial-slide">
+                <p class="testimonial-text">"Our lawn has never looked better! The team was professional, on time, and did an amazing job. I highly recommend their services to anyone looking for quality lawn care."</p>
+                <p class="testimonial-author">- Sarah Johnson, Weatherford, TX</p>
+            </div>
+            
+            <div class="testimonial-slide">
+                <p class="testimonial-text">"Exceptional service from start to finish. They transformed our backyard into the perfect outdoor space for our family. Great attention to detail and friendly staff."</p>
+                <p class="testimonial-author">- Michael Wilson, Fort Worth, TX</p>
+            </div>
+            
+            <div class="testimonial-slide">
+                <p class="testimonial-text">"I've been using their lawn care services for three years now and couldn't be happier. Consistent quality, fair pricing, and they always go the extra mile."</p>
+                <p class="testimonial-author">- Jennifer Smith, Arlington, TX</p>
+            </div>
+        </div>
+        
+        <div class="dots-container">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+      </div>
+      
+</body>
+</html>

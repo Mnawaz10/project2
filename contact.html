@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .contact-header h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .contact-header .underline {
+            width: 80px;
+            height: 4px;
+            background-color: #7ac142;
+            margin: 0 auto 20px;
+        }
+        
+        .contact-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #666;
+        }
+        
+        .contact-info-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 60px;
+        }
+        
+        .contact-info-box {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-info-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-info-box h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #444;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .contact-info-box h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: #7ac142;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .contact-info-box p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .contact-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-heading {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #444;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            flex: 1;
+            margin: 0 10px;
+            min-width: 250px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 15px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #7ac142;
+        }
+        
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #7ac142;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            background: #68a939;
+        }
+        
+        .submit-wrapper {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        /* Icon styles */
+        .icon {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #7ac142;
+        }
+        
+        /* Footer styles */
+        .footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 80px;
+        }
+        
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .contact-info-wrapper {
+                flex-direction: column;
+            }
+            
+            .contact-info-box {
+                margin-bottom: 20px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+            }
+            
+            .form-group {
+                margin: 0 0 15px 0;
+            }
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="contact-header">
+            <h1>Contact Us</h1>
+            <div class="underline"></div>
+            <p>Have questions or need assistance? We're here to help! Reach out to us using any of the methods below.</p>
+        </div>
+        
+        <div class="contact-info-wrapper">
+            <div class="contact-info-box">
+                <div class="icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>ADDRESS</h3>
+                <p>4321 California St,</p>
+                <p>San Francisco, CA 12345</p>
+            </div>
+            
+            <div class="contact-info-box">
+                <div class="icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>WORKING HOURS</h3>
+                <p>Monday-Saturday: 07:00 - 18:00</p>
+                <p>Sunday: CLOSED</p>
+            </div>
+            
+            <div class="contact-info-box">
+                <div class="icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>CONTACT INFO</h3>
+                <p>Phone: +1 123 456 1234</p>
+                <p>Email: info@company.com</p>
+            </div>
+        </div>
+        
+        <div class="contact-form">
+            <h3 class="form-heading">LEAVE US A MESSAGE</h3>
+            
+            <form id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="Message" rows="5" required></textarea>
+                </div>
+                
+                <div class="submit-wrapper">
+                    <button type="submit" class="btn">SEND MESSAGE</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Your Company. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Simple form validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically add AJAX code to submit the form
+            // For now, we'll just show an alert
+            alert('Your message has been sent! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
